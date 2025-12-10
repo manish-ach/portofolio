@@ -73,7 +73,10 @@
 
 <section class="page">
     <div class="page-content">
-        <HackerText text="PROJECTS" class="page-title" />
+        <div class="header-row">
+            <HackerText text="PROJECTS" class="page-title" />
+            <a href="/" class="return-link">// RETURN</a>
+        </div>
 
         <div class="matrix-grid">
             {#each projects as project}
@@ -81,7 +84,7 @@
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="matrix-cell"
+                    class="matrix-cell stagger-in"
                 >
                     <div class="cell-head">
                         <span class="cell-title">{project.title}</span>
@@ -124,16 +127,53 @@
         flex: 1;
     }
 
+    /* Header Row (Added for alignment & animation) */
+    .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+        padding-bottom: 2rem;
+        min-height: 8rem;
+    }
+
+    /* Draw Header Line */
+    .header-row::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: var(--text-primary);
+        width: 0;
+        animation: drawWidth 1s ease-out forwards;
+    }
+
+    .return-link {
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        transition: color 0.2s;
+        opacity: 0;
+        animation: fadeScale 0.5s ease-out 0.8s forwards;
+    }
+
+    .return-link:hover {
+        color: var(--accent-magenta);
+    }
+
     :global(.page-title) {
         font-size: clamp(4rem, 8vw, 6rem); /* Standard Size */
         margin: 0;
         line-height: 0.8;
         color: var(--text-primary);
-        opacity: 0.9;
-        min-height: 8rem; /* Reserve space key for alignment */
-        display: flex;
-        align-items: flex-end;
-        padding-bottom: 2rem; /* Align baseline */
+        opacity: 0;
+        animation: fadeScale 0.8s ease-out forwards;
+        display: block; /* Reset display flex from previous edit if simpler */
+        padding-bottom: 0;
     }
 
     /* Matrix Grid Layout */
@@ -146,6 +186,9 @@
         border: 2px solid var(--text-primary);
         flex: 1;
         overflow: hidden; /* Ensure 9 items stay put */
+        opacity: 0;
+        /* Reveal the whole grid after header */
+        animation: fadeScale 0.5s ease-out 0.5s forwards;
     }
 
     .matrix-cell {
@@ -158,6 +201,37 @@
         border-right: 1px solid var(--bg-tertiary);
         border-bottom: 1px solid var(--bg-tertiary);
         transition: background-color 0.1s;
+    }
+
+    /* Staggered entrance for cells */
+    /* We can loop this or just let the grid fade in. "Module Load" requested. */
+    /* Let's try nth-child delays for cells */
+    .matrix-cell:nth-child(1) {
+        animation-delay: 0.6s;
+    }
+    .matrix-cell:nth-child(2) {
+        animation-delay: 0.7s;
+    }
+    .matrix-cell:nth-child(3) {
+        animation-delay: 0.8s;
+    }
+    .matrix-cell:nth-child(4) {
+        animation-delay: 0.9s;
+    }
+    .matrix-cell:nth-child(5) {
+        animation-delay: 1s;
+    }
+    .matrix-cell:nth-child(6) {
+        animation-delay: 1.1s;
+    }
+    .matrix-cell:nth-child(7) {
+        animation-delay: 1.2s;
+    }
+    .matrix-cell:nth-child(8) {
+        animation-delay: 1.3s;
+    }
+    .matrix-cell:nth-child(9) {
+        animation-delay: 1.4s;
     }
 
     /* Remove right borders for last column */

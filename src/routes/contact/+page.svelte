@@ -7,11 +7,14 @@
 
 <section class="page">
     <div class="page-content">
-        <HackerText text="CONTACT" class="page-title" />
+        <div class="header-row">
+            <HackerText text="CONTACT" class="page-title" />
+            <a href="/" class="return-link">// RETURN</a>
+        </div>
 
         <div class="panes">
             <!-- Left Pane: Connect Links -->
-            <div class="pane connect-pane">
+            <div class="pane connect-pane stager-1">
                 <div class="pane-header">CHANNELS</div>
                 <div class="link-list">
                     <a
@@ -54,7 +57,7 @@
             </div>
 
             <!-- Right Pane: Status & Info -->
-            <div class="pane status-pane">
+            <div class="pane status-pane stager-2">
                 <div class="pane-header">STATUS</div>
                 <div class="status-content">
                     <div class="status-row">
@@ -105,24 +108,72 @@
         flex: 1;
     }
 
+    /* Header Row */
+    .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+        padding-bottom: 2rem;
+        min-height: 8rem;
+    }
+
+    /* Draw Header Line */
+    .header-row::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: var(--text-primary);
+        width: 0;
+        animation: drawWidth 1s ease-out forwards;
+    }
+
+    .return-link {
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        transition: color 0.2s;
+        opacity: 0;
+        animation: fadeScale 0.5s ease-out 0.8s forwards;
+    }
+
+    .return-link:hover {
+        color: var(--accent-magenta);
+    }
+
     :global(.page-title) {
         font-size: clamp(4rem, 8vw, 6rem); /* Standard Size */
         margin: 0;
         line-height: 0.8;
         color: var(--text-primary);
-        opacity: 0.9;
-        min-height: 8rem; /* Reserve space key for alignment */
-        display: flex;
-        align-items: flex-end;
-        padding-bottom: 2rem; /* Align baseline */
+        opacity: 0;
+        animation: fadeScale 0.8s ease-out forwards;
+        display: block;
+        padding-bottom: 0;
     }
 
     .panes {
         display: grid;
         grid-template-columns: 1.5fr 1fr;
         gap: 4rem;
-        border-top: 1px solid var(--text-primary);
-        padding-top: 3rem;
+        /* Remove top border here since Header Row has it */
+        /* border-top: 1px solid var(--text-primary); */
+        /* padding-top: 3rem; */
+        flex: 1;
+    }
+
+    .stager-1 {
+        opacity: 0;
+        animation: slideInUp 0.6s ease-out 0.4s forwards;
+    }
+    .stager-2 {
+        opacity: 0;
+        animation: slideInUp 0.6s ease-out 0.6s forwards;
     }
 
     .pane {

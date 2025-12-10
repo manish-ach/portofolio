@@ -5,9 +5,9 @@
 
 <section class="page">
     <div class="page-content">
-        <!-- Top Row: Header + Stats -->
         <div class="header-row">
             <HackerText text="ABOUT" class="page-title" />
+            <a href="/" class="return-link">// RETURN</a>
             <div class="stats-mini">
                 <div class="stat-group">
                     <span class="stat-val">RUST</span>
@@ -108,38 +108,54 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        border-bottom: 2px solid var(--text-primary);
+        position: relative;
         padding-bottom: 1rem;
-        min-height: 8rem; /* Reserve space for title */
+        min-height: 8rem;
+    }
+
+    /* Animated Border Bottom */
+    .header-row::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: var(--text-primary);
+        width: 0; /* Start width 0 */
+        animation: drawWidth 1s ease-out forwards;
+    }
+
+    .return-link {
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        transition: color 0.2s;
+        opacity: 0;
+        animation: fadeScale 0.5s ease-out 0.8s forwards; /* Delay until line drawn */
+    }
+
+    .return-link:hover {
+        color: var(--accent-magenta);
     }
 
     :global(.page-title) {
-        font-size: clamp(4rem, 8vw, 6rem); /* Standard Size */
+        font-size: clamp(4rem, 8vw, 6rem);
         margin: 0;
         line-height: 0.8;
         color: var(--text-primary);
+        opacity: 0; /* Fade in Title */
+        animation: fadeScale 0.8s ease-out forwards;
     }
 
     .stats-mini {
         display: flex;
         gap: 2rem;
         text-align: right;
-    }
-
-    .stat-group {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .stat-val {
-        font-weight: 900;
-        font-size: 1.25rem;
-    }
-
-    .stat-label {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        letter-spacing: 0.1em;
+        opacity: 0;
+        animation: slideInUp 0.6s ease-out 0.4s forwards;
     }
 
     /* Content Grid */
@@ -147,30 +163,9 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
-        flex: 1; /* Fill remaining height */
-    }
-
-    /* Bio Column */
-    .bio-col {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .headline {
-        font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-        line-height: 1;
-        font-weight: 900;
-        margin: 0;
-        color: var(--text-primary);
-        letter-spacing: -0.03em;
-    }
-
-    .bio-text {
-        font-size: 1rem;
-        line-height: 1.4;
-        color: var(--text-secondary);
-        max-width: 400px;
+        flex: 1;
+        opacity: 0;
+        animation: slideInUp 0.8s ease-out 0.6s forwards;
     }
 
     /* Experience Column */
@@ -178,8 +173,20 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        border-left: 1px solid var(--bg-tertiary);
+        position: relative;
         padding-left: 2rem;
+    }
+
+    /* Animated Vertical Divider */
+    .exp-col::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        background: var(--bg-tertiary);
+        height: 0; /* Start height 0 */
+        animation: drawHeight 1s ease-out 1s forwards;
     }
 
     .col-label {
