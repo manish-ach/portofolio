@@ -75,7 +75,6 @@
     <div class="page-content">
         <div class="header-row">
             <HackerText text="PROJECTS" class="page-title" />
-            <a href="/" class="return-link">// RETURN</a>
         </div>
 
         <div class="matrix-grid">
@@ -147,22 +146,6 @@
         background: var(--text-primary);
         width: 0;
         animation: drawWidth 1s ease-out forwards;
-    }
-
-    .return-link {
-        margin-bottom: 0.5rem;
-        text-decoration: none;
-        color: var(--text-muted);
-        font-size: 0.85rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        transition: color 0.2s;
-        opacity: 0;
-        animation: fadeScale 0.5s ease-out 0.8s forwards;
-    }
-
-    .return-link:hover {
-        color: var(--accent-magenta);
     }
 
     :global(.page-title) {
@@ -273,7 +256,7 @@
     .cell-info {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.25rem; /* Reduced from 0.5rem */
     }
 
     .cell-desc {

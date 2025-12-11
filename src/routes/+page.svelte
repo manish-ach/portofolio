@@ -36,12 +36,6 @@
             >
         </div>
     </div>
-
-    <div class="home-routers" class:animate={showLabels} style="--delay: 3">
-        <a href="/about" class="router-link">ABOUT</a>
-        <a href="/projects" class="router-link">PROJECTS</a>
-        <a href="/contact" class="router-link">CONTACT</a>
-    </div>
 </section>
 
 <style>
@@ -109,39 +103,6 @@
         animation-delay: calc(var(--delay) * 0.15s);
     }
 
-    /* Home Routers */
-    .home-routers {
-        position: absolute;
-        bottom: 4rem;
-        display: flex;
-        gap: 4rem;
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    .home-routers.animate {
-        animation: slideUpFade 0.6s ease-out forwards;
-        animation-delay: 0.6s; /* After labels */
-    }
-
-    .router-link {
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        text-decoration: none;
-        border-bottom: 1px solid var(--text-primary);
-        padding-bottom: 0.2rem;
-        font-weight: 700;
-        letter-spacing: 0.15em;
-        transition:
-            color 0.2s,
-            border-color 0.2s;
-    }
-
-    .router-link:hover {
-        color: var(--text-primary);
-        border-color: var(--accent-magenta);
-    }
-
     @keyframes slideUpFade {
         to {
             opacity: 1;
@@ -161,13 +122,6 @@
             width: 100%;
             max-width: 200px;
             text-align: center;
-        }
-
-        .home-routers {
-            bottom: 2rem;
-            gap: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
         }
     }
 </style>

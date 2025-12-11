@@ -7,7 +7,6 @@
     <div class="page-content">
         <div class="header-row">
             <HackerText text="ABOUT" class="page-title" />
-            <a href="/" class="return-link">// RETURN</a>
             <div class="stats-mini">
                 <div class="stat-group">
                     <span class="stat-val">RUST</span>
@@ -57,22 +56,24 @@
                     <div class="exp-item">
                         <div class="exp-head">
                             <span class="role">TEAM LEADER</span>
-                            <span class="date">JUNE 2025</span>
+                            <span class="date">JUN 2025</span>
                         </div>
-                        <h3 class="company">Team Modulens</h3>
+                        <h3 class="company">Team Modulens - Innosphere 1.0</h3>
                         <p class="details">
-                            Rust-PHP FFI Integration. 3rd Place Finish.
+                            Led Rust-PHP FFI integration. 85% performance boost.
+                            3rd place finish.
                         </p>
                     </div>
 
                     <div class="exp-item">
                         <div class="exp-head">
                             <span class="role">TEAM MEMBER</span>
-                            <span class="date">JULY 2025</span>
+                            <span class="date">JUL 2025</span>
                         </div>
-                        <h3 class="company">Team Nascent</h3>
+                        <h3 class="company">Team Nascent - DeerHack</h3>
                         <p class="details">
-                            SyncBridge Platform. Interactive Tech Winner.
+                            SyncBridge platform. Won Interactive Tech in 48hr
+                            hackathon.
                         </p>
                     </div>
                 </div>
@@ -123,22 +124,6 @@
         background: var(--text-primary);
         width: 0; /* Start width 0 */
         animation: drawWidth 1s ease-out forwards;
-    }
-
-    .return-link {
-        margin-bottom: 0.5rem;
-        text-decoration: none;
-        color: var(--text-muted);
-        font-size: 0.85rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        transition: color 0.2s;
-        opacity: 0;
-        animation: fadeScale 0.5s ease-out 0.8s forwards; /* Delay until line drawn */
-    }
-
-    .return-link:hover {
-        color: var(--accent-magenta);
     }
 
     :global(.page-title) {
