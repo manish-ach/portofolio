@@ -4,11 +4,12 @@
     import "../app.css";
     import { page } from "$app/stores"; // Changed from navigating to page
     import { fade } from "svelte/transition";
+    import { base } from "$app/paths";
     // favicon import removed as it's no longer used in svelte:head
 </script>
 
 <svelte:head>
-    <link rel="icon" href="/favicon.svg" />
+    <link rel="icon" href="{base}/favicon.svg" />
     <!-- Assuming favicon.svg is now in static -->
     <title>Manish Acharya | Systems Engineer</title>
 </svelte:head>
@@ -28,23 +29,26 @@
 <!-- Global Footer Navigation -->
 <nav class="global-footer">
     <div class="nav-content">
-        <a href="/" class="nav-link" class:active={$page.url.pathname === "/"}
-            >HOME</a
+        <a
+            href="{base}/"
+            class="nav-link"
+            class:active={$page.url.pathname === `${base}/` ||
+                $page.url.pathname === base}>HOME</a
         >
         <a
-            href="/about"
+            href="{base}/about"
             class="nav-link"
-            class:active={$page.url.pathname === "/about"}>ABOUT</a
+            class:active={$page.url.pathname === `${base}/about`}>ABOUT</a
         >
         <a
-            href="/projects"
+            href="{base}/projects"
             class="nav-link"
-            class:active={$page.url.pathname === "/projects"}>PROJECTS</a
+            class:active={$page.url.pathname === `${base}/projects`}>PROJECTS</a
         >
         <a
-            href="/contact"
+            href="{base}/contact"
             class="nav-link"
-            class:active={$page.url.pathname === "/contact"}>CONTACT</a
+            class:active={$page.url.pathname === `${base}/contact`}>CONTACT</a
         >
     </div>
 </nav>
