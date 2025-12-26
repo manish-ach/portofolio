@@ -23,15 +23,17 @@
         <div class="content-grid">
             <div class="bio-col">
                 <p class="headline">
-                    SYSTEMS PROGRAMMING.<br />
-                    HIGH PERFORMANCE.<br />
-                    WEB INFRASTRUCTURE.
+                    RUST SPECIALIST.<br />
+                    SYSTEMS ENGINEER.<br />
+                    FULL-STACK DEVELOPER.
                 </p>
                 <div class="bio-text">
                     <p>
-                        Focused on building efficient scalable solutions.
-                        Specializing in Rust backend development and network
-                        programming.
+                        Systems specialist with a focus on Rust and
+                        high-performance backend architecture. Experienced in
+                        full-stack development across multiple frameworks
+                        including React, Django, Svelte, and native mobile
+                        platforms.
                     </p>
                 </div>
 
@@ -40,12 +42,15 @@
                     <div class="toolkit-grid">
                         <span class="tool">RUST</span>
                         <span class="tool">TYPESCRIPT</span>
+                        <span class="tool">JAVASCRIPT</span>
                         <span class="tool">SVELTEKIT</span>
-                        <span class="tool">GO</span>
                         <span class="tool">POSTGRES</span>
                         <span class="tool">DOCKER</span>
                         <span class="tool">C++</span>
                         <span class="tool">LINUX</span>
+                        <span class="tool">REACT</span>
+                        <span class="tool">ANDROID</span>
+                        <span class="tool">DJANGO</span>
                     </div>
                 </div>
             </div>
@@ -70,7 +75,20 @@
                             <span class="role">TEAM MEMBER</span>
                             <span class="date">JUL 2025</span>
                         </div>
-                        <h3 class="company">Team Nascent - DeerHack</h3>
+                        <h3 class="company">Team Nascent — CodeFest Nepal</h3>
+                        <p class="details">
+                            Regional Winner (Gandaki Province) · National
+                            Finalist. CodeFest is the largest hackathon in
+                            Nepal.
+                        </p>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-head">
+                            <span class="role">TEAM MEMBER</span>
+                            <span class="date">JUL 2025</span>
+                        </div>
+                        <h3 class="company">Team Nascent — DeerHack</h3>
                         <p class="details">
                             SyncBridge platform. Won Interactive Tech in 48hr
                             hackathon.

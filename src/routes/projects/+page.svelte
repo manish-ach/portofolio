@@ -7,21 +7,21 @@
             title: "BROWRS",
             year: "2025",
             desc: "Terminal based browser in Rust",
-            tags: ["RUST", "TUI"],
+            tags: ["RUST", "TUI", "FILE NAVIGATOR"],
             url: "https://github.com/manish-ach/browrs",
         },
         {
             title: "M-OSH",
             year: "2025",
             desc: "Custom shell implementation",
-            tags: ["RUST", "SYSTEMS"],
+            tags: ["RUST", "SYSTEMS", "SHELL"],
             url: "https://github.com/manish-ach/m-osh",
         },
         {
             title: "SUCKLESS",
             year: "2024",
             desc: "Custom DWM build & dots",
-            tags: ["C", "LINUX"],
+            tags: ["C", "LINUX", "DWM", "DOTS"],
             url: "https://github.com/manish-ach/suckless",
         },
         {
@@ -39,17 +39,17 @@
             url: "https://github.com/manish-ach/gip",
         },
         {
-            title: "SODO",
+            title: "RenderNepal",
             year: "2025",
-            desc: "Native macOS Todo app",
-            tags: ["SWIFT", "MACOS"],
-            url: "https://github.com/manish-ach/SoDo",
+            desc: "Nepal-centric rendering / visualization project",
+            tags: ["HTML", "CSS", "JS", "GEOJSON", "VISUALIZATION"],
+            url: "https://github.com/manish-ach/RenderNepal",
         },
         {
             title: "NETOS",
             year: "2025",
             desc: "Web Desktop Mockup",
-            tags: ["TS", "WEB"],
+            tags: ["TS", "WEB", "REACT", "NEXTJS", "TAILWIND"],
             url: "https://github.com/manish-ach/netOS",
         },
         {
@@ -63,7 +63,7 @@
             title: "THEME",
             year: "2025",
             desc: "Editor Color Scheme",
-            tags: ["THEME", "UI"],
+            tags: ["THEME", "UI", "ZED"],
             url: "https://github.com/manish-ach/editor-theme",
         },
     ];
@@ -172,6 +172,9 @@
         opacity: 0;
         /* Reveal the whole grid after header */
         animation: fadeScale 0.5s ease-out 0.5s forwards;
+        position: relative;
+        z-index: 10;
+        background: var(--bg-primary); /* Ensure it's opaque */
     }
 
     .matrix-cell {

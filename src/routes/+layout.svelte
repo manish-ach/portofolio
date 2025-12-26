@@ -52,7 +52,6 @@
         >
     </div>
 </nav>
-```
 
 <style>
     .page-transition {
