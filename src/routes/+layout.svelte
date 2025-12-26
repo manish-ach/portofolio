@@ -48,6 +48,7 @@
             class="nav-link"
             class:active={$page.url.pathname === `${base}/contact`}>CONTACT</a
         >
+        <span class="sneaky-tag">(BUILT ON SVELTE)</span>
     </div>
 </nav>
 
@@ -141,5 +142,20 @@
         .nav-content {
             gap: 1.5rem;
         }
+    }
+    .sneaky-tag {
+        font-size: 0.6rem;
+        color: var(--bg-tertiary);
+        margin-left: auto; /* Push to far right if using flex-start on container, or just gap */
+        align-self: center;
+        opacity: 0.5;
+        font-family: var(--font-mono);
+        transition: color 0.3s;
+        cursor: default;
+    }
+
+    .sneaky-tag:hover {
+        color: #ff3e00;
+        opacity: 1;
     }
 </style>

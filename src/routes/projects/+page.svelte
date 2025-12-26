@@ -122,7 +122,7 @@
         display: flex;
         flex-direction: column;
         gap: 3rem; /* Standard Gap */
-        max-height: 800px;
+        max-height: 600px; /* Reduced to shrink cells vertically */
         flex: 1;
     }
 
@@ -180,8 +180,9 @@
     .matrix-cell {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        padding: 1.5rem;
+        justify-content: flex-start; /* Stack from top instead of spacing out */
+        gap: 0.5rem; /* Tighter gap */
+        padding: 0.75rem; /* Very compact padding */
         text-decoration: none;
         position: relative;
         border-right: 1px solid var(--bg-tertiary);
@@ -245,7 +246,7 @@
     }
 
     .cell-title {
-        font-size: 1.25rem;
+        font-size: 1rem; /* Even more compact */
         font-weight: 900;
         color: var(--text-primary);
     }
@@ -270,6 +271,7 @@
 
         display: -webkit-box;
         -webkit-line-clamp: 2;
+        line-clamp: 2; /* Standard property */
         -webkit-box-orient: vertical;
         overflow: hidden;
     }

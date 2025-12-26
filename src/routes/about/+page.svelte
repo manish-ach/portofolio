@@ -52,6 +52,9 @@
                         <span class="tool">ANDROID</span>
                         <span class="tool">DJANGO</span>
                     </div>
+                    <div class="sneaky-footer">
+                        <span>(BUILT ON SVELTE)</span>
+                    </div>
                 </div>
             </div>
 
@@ -257,6 +260,21 @@
         color: var(--text-muted);
         padding: 0.25rem 0.5rem;
         border: 1px solid transparent;
+    }
+
+    .sneaky-footer {
+        margin-top: 1rem;
+        font-size: 0.6rem;
+        color: var(--bg-tertiary); /* Very subtle, almost invisible */
+        font-family: var(--font-mono);
+        opacity: 0.7;
+        text-align: right;
+        transition: color 0.3s;
+        cursor: default;
+    }
+
+    .sneaky-footer:hover {
+        color: #ff3e00; /* Reveals on hover (Svelte Orange) */
     }
 
     @media (max-width: 968px) {
