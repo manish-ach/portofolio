@@ -1,6 +1,4 @@
 <script>
-    export const prerender = true;
-
     import "../app.css";
     import { page } from "$app/stores"; // Changed from navigating to page
     import { fade } from "svelte/transition";
